@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+body, html{
+  height: 100%;
+}
+
+.footer{
+  position: absolute;
+  bottom: 10px;
+  height: 60px;
+}
+.wrapper{
+  min-height:100%;
+  position: relative;
+}
+
+.content{
+  padding-bottom: 100px;
+}
