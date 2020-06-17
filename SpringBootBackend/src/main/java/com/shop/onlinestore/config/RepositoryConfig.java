@@ -13,5 +13,6 @@ public class RepositoryConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(Product.class);
         config.exposeIdsFor(ProductCategory.class);
+        config.getCorsRegistry().addMapping("/**").allowedOrigins("http://localhost:4200");
     }
 }

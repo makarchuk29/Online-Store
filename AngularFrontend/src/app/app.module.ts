@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductGridComponent } from './components/product-grid/product-grid.component';
 import { ProductService } from './services/product.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
 const routes: Routes = [
   {path: 'products', component: ProductGridComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ProductGridComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductCategoryComponent
   ],
   imports: [
     BrowserModule,
