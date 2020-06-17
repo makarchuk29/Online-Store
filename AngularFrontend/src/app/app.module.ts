@@ -7,9 +7,12 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
 import { ProductService } from './services/product.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import { SearchProductComponent } from './components/search-product/search-product.component';
 
 const routes: Routes = [
   {path: 'products', component: ProductGridComponent},
+  {path: 'search/:keyword', component: ProductGridComponent},
+
   {path: 'category/:id', component: ProductGridComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
@@ -21,7 +24,8 @@ const routes: Routes = [
     AppComponent,
     ProductGridComponent,
     PageNotFoundComponent,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    SearchProductComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ export class ProductGridComponent implements OnInit {
 
   products: Product[] = [];
   currentCategoryId: number;
+  searchMode: boolean;
 
   constructor(private _productService: ProductService, private _activatedRoute: ActivatedRoute) {
   }
@@ -23,6 +24,17 @@ export class ProductGridComponent implements OnInit {
   }
 
   listProducts() {
+    this.searchMode = this._activatedRoute.snapshot.paramMap.has('keyword');
+    if (this.searchMode) {
+      //search
+      this.handleSearchProducts()
+    }else {
+      //display category
+      this.handleListProducts()
+    }
+  }
+
+  handleListProducts(){
     const hasCategoryId: boolean = this._activatedRoute.snapshot.paramMap.has('id');
     if (hasCategoryId) {
       this.currentCategoryId = +this._activatedRoute.snapshot.paramMap.get('id');
@@ -34,4 +46,12 @@ export class ProductGridComponent implements OnInit {
     );
   }
 
+  handleSearchProducts(){
+    const keyword: string = this._activatedRoute.snapshot.paramMap.get('keyword');
+    this._productService.searchProducts(keyword).subscribe(
+      data => {
+        this.products = data
+      }
+    )
+  }
 }
