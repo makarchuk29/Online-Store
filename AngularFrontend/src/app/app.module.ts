@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 import { SearchProductComponent } from './components/search-product/search-product.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { JwPaginationComponent } from 'jw-angular-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 const routes: Routes = [
   {path: 'products/:id', component: ProductDetailsComponent},
@@ -27,11 +29,13 @@ const routes: Routes = [
     PageNotFoundComponent,
     ProductCategoryComponent,
     SearchProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
