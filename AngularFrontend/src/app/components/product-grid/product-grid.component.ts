@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Product} from '../../common/product';
 import {ProductService} from '../../services/product.service';
+import {CartService} from '../../services/cart.service';
+import {CartItem} from '../../common/cart-item';
 
 @Component({
   selector: 'app-product-grid',
@@ -20,7 +22,7 @@ export class ProductGridComponent implements OnInit {
   totalRecords: number = 0;
 
 
-  constructor(private _productService: ProductService, private _activatedRoute: ActivatedRoute) {
+  constructor(private _productService: ProductService, private _activatedRoute: ActivatedRoute, private _cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -81,5 +83,10 @@ export class ProductGridComponent implements OnInit {
       this.totalRecords = data.page.totalElements;
       this.pageSize = data.page.size;
     }
+  }
+  addToCart(product: Product){
+    console.log(`book name: ${product.name}, and price: ${product.unitPrice}`);
+    const cartItem = new CartItem(product);
+    this._cartService.addToCart(cartItem);
   }
 }
