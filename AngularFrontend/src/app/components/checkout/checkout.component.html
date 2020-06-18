@@ -98,57 +98,6 @@
             </div>
           </fieldset>
           <br/>
-          <div class="form-check">
-            <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)" class="form-check-input">
-            <label>Shipping address is the same as my billing address</label>
-          </div>
-          <br/>
-          <!-- Billing info -->
-          <fieldset class="scheduler-border">
-            <legend class="scheduler-border"><h3>Billing Address</h3></legend>
-            <div formGroupName="billingAddress">
-              <div class="row form-group">
-                <div class="col-md-3">
-                  <label>Street</label>
-                </div>
-                <div class="col-md-9">
-                  <div>
-                    <input type="text" formControlName="street" class="form-control"/>
-                  </div>
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col-md-3">
-                  <label>City</label>
-                </div>
-                <div class="col-md-9">
-                  <div>
-                    <input type="text" formControlName="city" class="form-control"/>
-                  </div>
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col-md-5 mb-3">
-                  <label>Country</label>
-                  <select formControlName="country" class="custom-select d-block w-100">
-                    <option value="">Choose...</option>
-                    <option>United States</option>
-                  </select>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label>State</label>
-                  <select formControlName="state" class="custom-select d-block w-100">
-                    <option value="">Choose...</option>
-                    <option>California</option>
-                  </select>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label>Zip</label>
-                  <input formControlName="zipcode" type="text" class="form-control">
-                </div>
-              </div>
-            </div>
-          </fieldset>
 
           <!-- Credit card info -->
           <fieldset class="scheduler-border">
