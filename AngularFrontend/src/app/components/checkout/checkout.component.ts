@@ -48,7 +48,7 @@ export class CheckoutComponent implements OnInit {
         expirationMonth: [''],
         expirationYear: ['']
       }),
-    })
+    });
   }
 
   cartDetails(){
@@ -68,7 +68,8 @@ export class CheckoutComponent implements OnInit {
   onSubmit() {
     console.log('Purchase the books');
     console.log(this.checkoutFormGroup.get('customer').value);
-    console.log("Emial is", this.checkoutFormGroup.get('customer').value.email);
+    console.log(this.checkoutFormGroup.get('shippingAddress').value);
+    console.log('Email is', this.checkoutFormGroup.get('customer').value.email);
   }
 
   copyShippingAddressToBillingAddress(event) {
