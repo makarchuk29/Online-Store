@@ -11,9 +11,11 @@ import { SearchProductComponent } from './components/search-product/search-produ
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CartStatusComponent } from './components/cart-status/cart-status.component'
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component'
 
 const routes: Routes = [
+  {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
   {path: 'products', component: ProductGridComponent},
   {path: 'search/:keyword', component: ProductGridComponent},
@@ -32,7 +34,8 @@ const routes: Routes = [
     SearchProductComponent,
     ProductDetailsComponent,
     JwPaginationComponent,
-    CartStatusComponent
+    CartStatusComponent,
+    CartDetailsComponent
   ],
   imports: [
     BrowserModule,
